@@ -1,0 +1,23 @@
+name: weak_plan
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  url_launcher: ^6.0.3
+  supabase: ^0.0.1-dev.16
+  uni_links: ^0.5.1
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  pedantic: ^1.11.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
