@@ -4,15 +4,15 @@ import 'package:weak_plan/ui/home_page.dart';
 import 'package:weak_plan/ui/login_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatefulWidget {
+class App extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _AppState createState() => _AppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _AppState extends State<App> {
   final AuthService _authService = AuthService();
   bool isLoggedIn = false;
 
@@ -27,16 +27,16 @@ class _MyAppState extends State<MyApp> {
   }
 
   @override
-  void dispose() {
-    _authService.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Weak Plan',
       home: isLoggedIn ? HomePage() : LoginPage(_authService),
     );
+  }
+
+  @override
+  void dispose() {
+    _authService.dispose();
+    super.dispose();
   }
 }
